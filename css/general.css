@@ -1,0 +1,78 @@
+:root {
+	--dark-color : #233142;
+}
+
+*, ::after, ::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Dark/Light mode settings  */
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--dark-color);
+	background-color: white;
+	transition: 550ms all;
+	font-size: 100%;
+	font-family: Arial, sans-serif;
+}
+
+body.dark {
+	color: white;
+}
+
+.curtains {
+	position: absolute;
+	top: 0;
+	background-color: var(--dark-color);
+	color:  white;
+	width: 100%;
+	height: 0vh;
+	transition:  550ms height ease-in;
+	z-index: -1;
+}
+
+.container {
+	height: 250px;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.container > * {
+	padding: 10px;
+}
+
+.mode-indicator {
+	font-size: 72px;
+}
+
+p, btn-switcher {
+	font-size: 20px;
+}
+
+.btn-switcher {
+	width: 200px;
+	padding : 20px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: 800ms all;
+	background-color: var(--dark-color);
+	color: white;
+	font-size: 1.5em;
+}
+
+body.dark .btn-switcher {
+	background-color: white;
+	color: var(--dark-color);
+}
